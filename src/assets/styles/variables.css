@@ -1,0 +1,46 @@
+/* Google Fonts Imports */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  /* --- Typography System --- */
+  /* Uncomment one to activate */
+  /* --font-serif: 'EB Garamond', serif; */
+  /* --font-serif: 'Libre Caslon Text', serif; */
+  /* --font-serif: 'Crimson Pro', serif; */
+  --font-serif: 'Source Serif Pro', serif;
+
+  --font-body: var(--font-serif);
+  --font-heading: var(--font-serif);
+
+  /* --- Color Palette (Earth Tones) --- */
+  --color-bg: #F4F1DE;        /* Cream / Paper */
+  --color-text: #3D405B;      /* Deep Blue/Grey / Ink */
+  --color-accent-1: #E07A5F;  /* Terracotta */
+  --color-accent-2: #F2CC8F;  /* Ochre */
+  --color-accent-3: #81B29A;  /* Sage */
+  --color-accent-4: #6B705C;  /* Olive */
+  
+  /* Group Colors (Mapped from groups.yaml logic) */
+  --color-core: #E07A5F;
+  --color-motivational: #F2CC8F;
+  --color-social: #81B29A;
+  --color-self-eval: #3D405B;
+  --color-energy: #F4F1DE;
+  --color-cognitive: #6B705C;
+
+  /* UI Colors */
+  --color-card-bg: #FFFFFF;
+  --color-card-border: rgba(61, 64, 91, 0.1);
+  --color-card-shadow: rgba(61, 64, 91, 0.05);
+
+  /* --- Spacing & Layout --- */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 4rem;
+
+  --grid-gap: var(--spacing-sm);
+  --card-radius: 4px; /* Slightly rounded, almost square for tactile feel */
+}

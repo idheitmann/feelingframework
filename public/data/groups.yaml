@@ -1,0 +1,29 @@
+- id: "core"
+  name: "Core Emotions"
+  color: "#E07A5F" # Terracotta
+  position: 1
+
+- id: "motivational"
+  name: "Motivational"
+  color: "#F2CC8F" # Ochre
+  position: 2
+
+- id: "social"
+  name: "Social Bonding"
+  color: "#81B29A" # Sage
+  position: 3
+
+- id: "self-eval"
+  name: "Self-Evaluation"
+  color: "#3D405B" # Deep Blue/Grey
+  position: 4
+
+- id: "energy"
+  name: "Energy State"
+  color: "#F4F1DE" # Cream
+  position: 5
+
+- id: "cognitive"
+  name: "Cognitive"
+  color: "#6B705C" # Olive
+  position: 6

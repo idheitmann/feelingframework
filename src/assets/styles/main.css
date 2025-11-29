@@ -1,0 +1,287 @@
+@import './variables.css';
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Layout --- */
+#app {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* --- Utilities --- */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}/* Periodic Table Grid */
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    /* 10 levels of arousal */
+    gap: var(--grid-gap);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Keep it square-ish for the coordinate system feel */
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    /* Axis labels could be added as pseudo-elements or separate containers */
+}
+
+/* Element Card */
+.element-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--card-radius);
+    padding: var(--spacing-xs);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    box-shadow: 0 2px 4px var(--color-card-shadow);
+
+    /* Dynamic color border or background accent */
+    border-top: 4px solid var(--element-color);
+}
+
+.element-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.element-card.selected {
+    border-color: var(--color-text);
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px var(--color-text);
+    z-index: 20;
+}
+
+.element-number {
+    font-size: 0.7rem;
+    align-self: flex-start;
+    opacity: 0.6;
+}
+
+.element-symbol {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-serif);
+    color: var(--element-color);
+}
+
+.element-name {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+/* Detail Overlay */
+#detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(61, 64, 91, 0.8);
+    /* Dark overlay */
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+}
+
+.detail-card {
+    background-color: var(--color-bg);
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--card-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-card-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--color-text);
+    opacity: 0.5;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.detail-header {
+    background-color: var(--color-card-bg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    border-bottom: 4px solid var(--element-color);
+}
+
+.detail-number {
+    font-size: 1rem;
+    opacity: 0.6;
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+}
+
+.detail-symbol {
+    font-size: 4rem;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--element-color);
+    line-height: 1;
+    margin-bottom: var(--spacing-xs);
+}
+
+.detail-name {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.detail-group {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.detail-body {
+    padding: var(--spacing-lg);
+}
+
+.detail-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.detail-section h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+    margin-bottom: var(--spacing-xs);
+}
+
+.detail-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: var(--spacing-md);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+}

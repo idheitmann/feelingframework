@@ -1,0 +1,233 @@
+- symbol: "Jy"
+  name: "Joy"
+  number: 1
+  group: "core"
+  valence: 9
+  arousal: 8
+  description: "A feeling of great pleasure and happiness."
+  somatic: "Upward expansion in chest, lightness."
+
+- symbol: "Sd"
+  name: "Sadness"
+  number: 2
+  group: "core"
+  valence: 2
+  arousal: 3
+  description: "Emotional pain associated with feelings of loss, despair, grief, or disappointment."
+  somatic: "Heaviness in limbs, constriction in throat."
+
+- symbol: "An"
+  name: "Anger"
+  number: 3
+  group: "motivational"
+  valence: 2
+  arousal: 9
+  description: "A strong feeling of annoyance, displeasure, or hostility."
+  somatic: "Heat in face, tension in jaw and hands."
+
+- symbol: "Fr"
+  name: "Fear"
+  number: 4
+  group: "motivational"
+  valence: 2
+  arousal: 8
+  description: "An unpleasant emotion caused by the belief that something is dangerous or threatening."
+  somatic: "Coldness, rapid heartbeat, shallow breathing."
+
+- symbol: "Tr"
+  name: "Trust"
+  number: 5
+  group: "social"
+  valence: 8
+  arousal: 5
+  description: "Firm belief in the reliability, truth, or strength of someone or something."
+  somatic: "Relaxation in belly, open posture."
+
+- symbol: "Sr"
+  name: "Surprise"
+  number: 6
+  group: "cognitive"
+  valence: 5
+  arousal: 10
+  description: "The feeling caused by something unexpected or unusual."
+  somatic: "Widening of eyes, sharp intake of breath."
+
+- symbol: "Dg"
+  name: "Disgust"
+  number: 7
+  group: "core"
+  valence: 2
+  arousal: 6
+  description: "A strong feeling of revulsion or profound disapproval."
+  somatic: "Nausea, turning away, wrinkling of nose."
+
+- symbol: "Ap"
+  name: "Anticipation"
+  number: 8
+  group: "cognitive"
+  valence: 6
+  arousal: 7
+  description: "Expectation or prediction of a future event."
+  somatic: "Forward lean, heightened attention, restlessness."
+
+- symbol: "Lv"
+  name: "Love"
+  number: 9
+  group: "social"
+  valence: 9
+  arousal: 6
+  description: "Deep affection and care for another."
+  somatic: "Warmth in chest, softening of face."
+
+- symbol: "Sh"
+  name: "Shame"
+  number: 10
+  group: "self-evaluation"
+  valence: 2
+  arousal: 5
+  description: "Painful feeling of humiliation caused by consciousness of wrong or foolish behavior."
+  somatic: "Heat in face, desire to hide, collapsed posture."
+
+- symbol: "Gl"
+  name: "Guilt"
+  number: 11
+  group: "self-evaluation"
+  valence: 3
+  arousal: 5
+  description: "Awareness of having done wrong, with desire to make amends."
+  somatic: "Weight in chest, restless discomfort."
+
+- symbol: "Pr"
+  name: "Pride"
+  number: 12
+  group: "self-evaluation"
+  valence: 8
+  arousal: 7
+  description: "Satisfaction derived from achievements or qualities."
+  somatic: "Chest expansion, lifted chin, upright posture."
+
+- symbol: "Nv"
+  name: "Envy"
+  number: 13
+  group: "social"
+  valence: 3
+  arousal: 6
+  description: "Discontent aroused by desire for another's possessions or qualities."
+  somatic: "Tightness in chest, gnawing sensation."
+
+- symbol: "Gr"
+  name: "Gratitude"
+  number: 14
+  group: "social"
+  valence: 8
+  arousal: 4
+  description: "Appreciation for what one has received."
+  somatic: "Warmth spreading through chest, softened eyes."
+
+- symbol: "Hp"
+  name: "Hope"
+  number: 15
+  group: "cognitive"
+  valence: 7
+  arousal: 6
+  description: "Expectation and desire for a positive outcome."
+  somatic: "Lightness, forward orientation, open breathing."
+
+- symbol: "Ds"
+  name: "Despair"
+  number: 16
+  group: "energy"
+  valence: 1
+  arousal: 2
+  description: "Complete loss of hope."
+  somatic: "Collapsed posture, heaviness, difficulty moving."
+
+- symbol: "Sn"
+  name: "Serenity"
+  number: 17
+  group: "energy"
+  valence: 8
+  arousal: 2
+  description: "State of calm and peacefulness."
+  somatic: "Slow breathing, relaxed muscles, stillness."
+
+- symbol: "Ag"
+  name: "Agitation"
+  number: 18
+  group: "energy"
+  valence: 4
+  arousal: 8
+  description: "State of anxiety or nervous excitement."
+  somatic: "Fidgeting, rapid pulse, inability to settle."
+
+- symbol: "Aw"
+  name: "Awe"
+  number: 19
+  group: "cognitive"
+  valence: 7
+  arousal: 7
+  description: "Reverential wonder mixed with fear or admiration."
+  somatic: "Stillness, breath held, widened perception."
+
+- symbol: "Cn"
+  name: "Contempt"
+  number: 20
+  group: "social"
+  valence: 3
+  arousal: 4
+  description: "Feeling that someone or something is beneath consideration."
+  somatic: "Asymmetric lip raise, turning away."
+
+- symbol: "Ln"
+  name: "Longing"
+  number: 21
+  group: "motivational"
+  valence: 4
+  arousal: 5
+  description: "Persistent desire for something distant or unattainable."
+  somatic: "Ache in chest, reaching sensation."
+
+- symbol: "Cr"
+  name: "Curiosity"
+  number: 22
+  group: "cognitive"
+  valence: 6
+  arousal: 6
+  description: "Strong desire to know or learn something."
+  somatic: "Head tilt, leaning in, focused attention."
+
+- symbol: "Br"
+  name: "Boredom"
+  number: 23
+  group: "energy"
+  valence: 4
+  arousal: 2
+  description: "Weariness from lack of interest or occupation."
+  somatic: "Heaviness in eyelids, restless shifting, sighing."
+
+- symbol: "Em"
+  name: "Embarrassment"
+  number: 24
+  group: "self-evaluation"
+  valence: 3
+  arousal: 7
+  description: "Self-conscious distress from social exposure."
+  somatic: "Flushing, averted gaze, nervous laughter."
+
+- symbol: "Rl"
+  name: "Relief"
+  number: 25
+  group: "energy"
+  valence: 7
+  arousal: 3
+  description: "Relaxation following release from anxiety or distress."
+  somatic: "Exhale, dropping shoulders, softening."
+
+- symbol: "In"
+  name: "Interest"
+  number: 26
+  group: "cognitive"
+  valence: 6
+  arousal: 5
+  description: "Attention directed toward something engaging."
+  somatic: "Alert posture, steady gaze, quiet focus."
