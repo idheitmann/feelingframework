@@ -125,7 +125,7 @@ fixed physical size (e.g. 63.5×88.9mm poker standard) with cut marks and
 bleed, N-up per page. Card backs (group-colored, shared motif) as a second
 sheet for duplex printing.
 
-**P3. Poster mode.** The full roster in the valence×arousal grid at poster scale
+**P3. Poster mode.** The full roster in the family-column table at poster scale
 (A2/A1), with title, legend, and the research one-liners as fine print —
 this is where Track R content becomes visible ornament.
 

@@ -18,38 +18,49 @@ export function createPeriodicTable() {
 function render(container, state) {
     container.innerHTML = '';
 
-    // Create grid container
-    // We use a 10x10 grid (Valence 1-10, Arousal 1-10)
-    // Plus some padding/margins if needed
+    // Layout: one column per group (ordered by group position, like element
+    // families in a periodic table), elements sorted top-down from highest
+    // to lowest valence within their column. Fully data-driven — columns
+    // and rows follow whatever groups.yaml and elements.yaml contain.
 
-    state.elements.forEach(element => {
-        const card = document.createElement('div');
-        card.className = 'element-card';
-        card.dataset.id = element.number;
+    const sortedGroups = [...state.groups].sort((a, b) => a.position - b.position);
+    container.style.setProperty('--group-count', sortedGroups.length);
 
-        // Position Logic
-        // Valence (X): 1 (left) -> 10 (right)
-        // Arousal (Y): 1 (low/bottom) -> 10 (high/top)
-        // CSS Grid Row: 1 is top. So we need to invert Arousal.
-        // Row = 11 - Arousal (so 10 becomes 1, 1 becomes 10)
+    sortedGroups.forEach((group, colIndex) => {
+        const col = colIndex + 1;
 
-        const col = element.valence;
-        const row = 11 - element.arousal;
+        const header = document.createElement('div');
+        header.className = 'group-header';
+        header.style.gridColumn = col;
+        header.style.gridRow = 1;
+        header.style.color = group.color;
+        header.textContent = group.name;
+        container.appendChild(header);
 
-        card.style.gridColumn = col;
-        card.style.gridRow = row;
+        const members = state.elements
+            .filter(e => e.group === group.id)
+            .sort((a, b) =>
+                b.valence - a.valence || b.arousal - a.arousal || a.number - b.number
+            );
 
-        const group = state.groups.find(g => g.id === element.group);
-        if (state.selectedElementId === element.number) {
-            card.classList.add('selected');
-        }
+        members.forEach((element, rowIndex) => {
+            const card = document.createElement('div');
+            card.className = 'element-card';
+            card.dataset.id = element.number;
+            card.style.gridColumn = col;
+            card.style.gridRow = rowIndex + 2;
 
-        card.appendChild(createElementCard(element, group));
+            if (state.selectedElementId === element.number) {
+                card.classList.add('selected');
+            }
 
-        card.addEventListener('click', () => {
-            store.selectElement(element.number);
+            card.appendChild(createElementCard(element, group));
+
+            card.addEventListener('click', () => {
+                store.selectElement(element.number);
+            });
+
+            container.appendChild(card);
         });
-
-        container.appendChild(card);
     });
 }

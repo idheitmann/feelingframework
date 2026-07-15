@@ -70,18 +70,28 @@ h1 {
     }
 }
 
-/* Periodic Table Grid */
+/* Periodic Table Grid
+   One column per group (family), rows ranked by valence — column count is
+   data-driven via --group-count set by PeriodicTable.js. */
 .periodic-table {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    /* 10 levels of arousal */
+    grid-template-columns: repeat(var(--group-count, 6), 1fr);
     gap: var(--grid-gap);
     width: 100%;
-    aspect-ratio: 1 / 1;
-    /* Keep it square-ish for the coordinate system feel */
-    margin-bottom: var(--spacing-xl);
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-xl);
     position: relative;
+    align-items: start;
+}
+
+.group-header {
+    align-self: end;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: var(--spacing-xs);
 }
 
 /* Element Card
@@ -95,6 +105,7 @@ h1 {
     align-items: center;
     cursor: pointer;
     position: relative;
+    aspect-ratio: 5 / 7;
 }
 
 .element-card svg {
@@ -347,9 +358,11 @@ h1 {
         display: flex;
         flex-wrap: wrap;
         gap: var(--spacing-xs);
-        aspect-ratio: auto;
-        /* Remove square aspect ratio constraint */
         justify-content: center;
+    }
+
+    .group-header {
+        display: none;
     }
 
     /* Compact Element Cards — natural 5:7 card ratio, 3 per row */

@@ -14,7 +14,8 @@ each emotion).
 Phase 1 periodic table is **working** on `main`:
 - 26 starter elements defined in YAML (`public/data/elements.yaml`)
 - 6 groups with color palette (`public/data/groups.yaml`)
-- Valence×arousal CSS grid layout (10×10 grid)
+- Family-column layout: one column per group (ordered by `position`),
+  elements sorted top-down by descending valence (arousal as tie-break)
 - Click-to-inspect detail overlay (description, somatic experience, stats)
 - Pub/sub store pattern (`src/store.js`)
 - Vite dev server, js-yaml for data loading
