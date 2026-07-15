@@ -67,7 +67,7 @@ Nummenmaa's body-mapping studies) rather than intuition.
 
 ## Track A — Art Pipeline (AI-generated + human-drawn, iterable)
 
-**A1. Schema + manifest.** Add to each element:
+**A1. Schema + manifest. ✅ Done.** Add to each element:
 
 ```yaml
   illustration:
@@ -83,35 +83,42 @@ illustration means editing the prompt and re-running, not archaeology.
 Human-drawn art drops into the same slot by symbol name and simply sets
 `source: human` — the renderer never cares which it is.
 
-**A2. Illustration conventions doc** (`public/assets/illustrations/README.md`):
+**A2. Illustration conventions doc. ✅ Done** (`public/assets/illustrations/README.md`):
 viewBox (square, e.g. `0 0 120 120`, sits inside the 200×280 card), stroke/fill
 rules tied to the group palette, no embedded fonts, no raster data, engraved/
 letterpress aesthetic guidance. This is the contract both the LLM generator
 and human artists draw against.
 
-**A3. Seed the full roster with generated art.** First pass: LLM-generated SVG
+**A3. Seed the full roster with generated art. ✅ Done (v1 for all 26).**
+Known v2 candidates: Despair/Curiosity spirals too similar at grid scale,
+Contempt motif ambiguous, Anger bolt more literal than the set's register.
+Still open: a script that regenerates exactly the missing art after a roster
+change. First pass: LLM-generated SVG
 per element following A2. These are placeholders-with-dignity — good enough to
 ship, individually replaceable forever after. The generator should be a script
 driven by `elements.yaml`, so a roster change (elements added, renamed,
 removed) regenerates exactly the missing art with no manual bookkeeping.
 
-**A4. Iteration workflow.** A tiny gallery page (dev-only route or plain HTML)
+**A4. Iteration workflow. ✅ Done** (`/gallery.html`). A tiny gallery page
 showing every illustration side by side at card scale and print scale, so
 each art review pass sees the whole set's coherence, not one card at a time.
 
 ## Track C — SVG Card Renderer (the web/print hinge)
 
-**C1. `src/components/ElementCard.js`** — a pure function
+**C1. `src/components/ElementCard.js`. ✅ Done** — a pure function
 `(element, group) → SVGElement`, viewBox `0 0 200 280`, rendering number,
 symbol, name, group accent, and the illustration (inlined, not `<img>`, so
 print export stays self-contained). Fallback when no illustration: a subtle
 group-colored glyph or texture.
 
-**C2. Refactor PeriodicTable** to place these SVG cards in the existing
-valence×arousal CSS grid. Same layout logic, same store, same click handling.
-DetailView can reuse the card SVG at large scale as its header.
+**C2. Refactor PeriodicTable. ✅ Done — and the layout evolved:** the
+valence×arousal scatter was replaced by a family-column table (one column
+per group, sorted top-down by descending valence), which reads far more like
+a periodic table and makes the columns carry meaning. Legend and atomic
+numbers were removed from display (`number` remains as internal ID only).
+Still open: DetailView reusing the card SVG at large scale as its header.
 
-**C3. Keep the renderer output-agnostic.** No CSS-class-dependent styling
+**C3. Keep the renderer output-agnostic. ✅ Done.** No CSS-class-dependent styling
 inside the SVG — all colors/fonts resolved at generation time — so the same
 node serializes cleanly into a print sheet or a downloaded file.
 
@@ -138,22 +145,22 @@ generation in CI for downloadable "lab sheets."
 - Replace Vite favicon with a project mark; add OG/meta tags.
 - Texture and typography passes per the LLM.md aesthetic (letterpress,
   weathered linen — subtle, not skeuomorphic).
-- Hover/keyboard affordances, reduced-motion support, mobile layout for the
-  10×10 grid (it will need a strategy — scroll, scale, or reflow).
+- Hover/keyboard affordances, reduced-motion support; revisit the mobile
+  layout (currently a flat 3-up card wrap that discards the family columns).
 - Netlify deploy (static build already works).
 
 ---
 
 ## Suggested sequence
 
-| Step | What | Why first |
-|------|------|-----------|
-| 1 | A1 + C1 + C2 (schema, card renderer, grid refactor) | Everything else hangs off SVG cards |
-| 2 | A2 + A3 (conventions + generated illustrations for the roster) | Makes the site beautiful; unblocks print |
-| 3 | P1 + P2 (print CSS + card sheets) | First physical deliverable |
-| 4 | R1–R3 (schema, sources, research passes) | Content refinement is iterative; start early, land continuously |
-| 5 | P3 + R4–R5 (poster + taxonomy audit + rewrites) | Poster wants final-ish content |
-| 6 | Phase 2 compound lab | After the element layer is solid |
+| Step | What | Why first | Status |
+|------|------|-----------|--------|
+| 1 | A1 + C1 + C2 (schema, card renderer, grid refactor) | Everything else hangs off SVG cards | ✅ Done |
+| 2 | A2 + A3 (conventions + generated illustrations for the roster) | Makes the site beautiful; unblocks print | ✅ Done (v1) |
+| 3 | P1 + P2 (print CSS + card sheets) | First physical deliverable | Next |
+| 4 | R1–R3 (schema, sources, research passes) | Content refinement is iterative; start early, land continuously | |
+| 5 | P3 + R4–R5 (poster + taxonomy audit + rewrites) | Poster wants final-ish content | |
+| 6 | Phase 2 compound lab | After the element layer is solid | |
 
 Research (Track R) is deliberately interleaved rather than last: the taxonomy
 audit (R4) may rename, regroup, or replace elements, and the YAML-driven

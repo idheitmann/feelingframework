@@ -1,5 +1,14 @@
 # Project Specification
 
+> **Status note (July 2026):** this is the founding spec, kept as the vision
+> document. Where details have evolved, current truth lives in `CLAUDE.md`
+> (state + conventions) and `ROADMAP.md` (plan). Known departures: valence
+> and arousal are numeric 1–10 (not strings); the layout is a family-column
+> table sorted by valence (not a positioned scatter); the energy group's
+> cream became weathered brown; all 26 elements shipped with illustrations
+> (the spec's 5–6 sample elements were the proof-of-pattern); the roster
+> size itself is an open research question.
+
 ---
 
 **Project: FeelingFrame.work - Periodic Table of Emotions**

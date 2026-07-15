@@ -2,8 +2,9 @@
 
 ## Project Overview
 
-Read `LLM.md` first for the full vision and spec. This file supplements it with
-architectural decisions, current state, and near-term direction.
+Read `LLM.md` first for the full vision and spec, and `ROADMAP.md` for the
+tracked plan (research grounding, art pipeline, print). This file supplements
+them with architectural decisions, current state, and conventions.
 
 **Core idea:** emotional "elements" (like chemical elements) that combine into
 compound emotions. Chemistry metaphor with somatic integration (body location of
@@ -11,15 +12,24 @@ each emotion).
 
 ## Current State (July 2026)
 
-Phase 1 periodic table is **working** on `main`:
-- 26 starter elements defined in YAML (`public/data/elements.yaml`)
+Phase 1 periodic table is **working**; active work is on
+`feature/art-print-infrastructure`:
+- 26 starter elements defined in YAML (`public/data/elements.yaml`) — the
+  count is a draft, not a commitment; the roster is an open research question
 - 6 groups with color palette (`public/data/groups.yaml`)
+- Elements render as self-contained SVG cards (`src/components/ElementCard.js`)
+- All 26 elements have generated engraved-line illustrations, with
+  regeneration prompts and versions tracked in elements.yaml
 - Family-column layout: one column per group (ordered by `position`),
-  elements sorted top-down by descending valence (arousal as tie-break)
+  elements sorted top-down by descending valence (arousal as tie-break),
+  group-name column headers (no separate legend)
+- Art-review gallery at `/gallery.html` (second Vite page): every card and
+  motif at two scales
 - Click-to-inspect detail overlay (description, somatic experience, stats)
 - Pub/sub store pattern (`src/store.js`)
 - Vite dev server, js-yaml for data loading
-- Earth-tone design system (terracotta, ochre, sage, cream, olive, deep blue)
+- Earth-tone design system (terracotta, ochre, sage, weathered brown, olive,
+  deep blue on cream paper)
 - Serif typography (Source Serif Pro)
 
 Compounds scaffold exists but is empty (Phase 2).
@@ -31,27 +41,24 @@ All content lives in YAML files under `public/data/`. The UI is fully decoupled
 from content — no hardcoded element names, symbols, groups, or descriptions.
 Adding or changing elements means editing YAML, not touching components.
 
-### SVG+JS Card Layout (Dual Web/Print)
-Cards are **LLM-generated SVG** assets. A JS layout library arranges them for
-web display. The same SVG assets export to print-ready output because SVG is
-resolution-independent.
+### SVG Card Rendering (Dual Web/Print) — implemented
+`ElementCard.js` is a pure `(element, group) → SVGElement` function. All
+colors/fonts are resolved as presentation attributes (no CSS classes inside
+the SVG), so the same node renders in the grid, the detail view, and — later —
+serializes into print sheets unchanged. A plain CSS grid positions the cards
+(no layout library needed). Print output targets: poster, card deck, and
+potentially a PDF "lab" export.
 
-**This means:**
-- Each element card should eventually be an SVG (not a DOM div)
-- A layout engine (e.g., dagre, cytoscape.js, or a custom grid) positions SVGs
-- The same layout algorithm can render to screen (HTML/SVG) and to print (PDF)
-- Print output targets: poster, card deck, and potentially a PDF "lab" export
-
-### Art Insertion Infrastructure
-The framework needs to support per-element illustrations (visual symbols,
-icons, or abstract art). Current cards show symbol + name only. The
-infrastructure should:
-
-- Define an `illustration` field in elements.yaml (path to SVG or generation prompt)
-- Render illustrations inline in the card SVG
-- Support both generated (LLM) and hand-crafted illustration assets
-- Keep illustrations in `public/assets/illustrations/` named by element symbol
-- Fall back gracefully if no illustration is present
+### Art Insertion Infrastructure — implemented
+Per-element illustrations live in `public/assets/illustrations/<Symbol>.svg`
+(conventions contract in that directory's README.md). Each element's
+`illustration` block in elements.yaml records `file`, `source`
+(generated | human | hybrid), `version`, and the regeneration `prompt` —
+kept even for human art. The data loader fetches declared SVGs and inlines
+them into the card; a missing illustration falls back to a quiet glyph, never
+an error. Iterating on generated art = edit prompt, regenerate, bump version.
+Human art = drop in the file, set `source: human`. Review the whole set at
+`/gallery.html`.
 
 ### Compound Lab (Phase 2 - Design For, Don't Build Yet)
 The codebase should be structured so the compound lab can be added without
@@ -64,25 +71,29 @@ out). The store already has a `compounds` array and `selectedCompoundId`.
 ```
 feelingframework/
 ├── CLAUDE.md              # This file
-├── LLM.md                 # Full project spec (read this first)
-├── index.html             # Vite entry point
+├── LLM.md                 # Founding spec (vision; historical)
+├── ROADMAP.md             # Tracked plan and status
+├── index.html             # Vite entry point (main table)
+├── gallery.html           # Art-review gallery page
+├── vite.config.js         # Two-page build (main + gallery)
 ├── package.json
 ├── public/
 │   ├── data/
-│   │   ├── elements.yaml  # Element definitions
+│   │   ├── elements.yaml  # Element definitions + illustration metadata
 │   │   ├── groups.yaml    # Group/color definitions
 │   │   └── compounds.yaml # Compound formulas (Phase 2)
 │   └── assets/
-│       └── illustrations/ # Per-element SVG art (to be added)
+│       └── illustrations/ # Per-element SVG art (<Symbol>.svg + README contract)
 └── src/
     ├── main.js            # App init
+    ├── gallery.js         # Gallery page init
     ├── store.js           # Pub/sub state store
     ├── components/
     │   ├── ElementCard.js    # SVG card renderer
     │   ├── PeriodicTable.js  # Family-column table layout
     │   └── DetailView.js     # Element overlay
     ├── utils/
-    │   └── dataLoader.js     # YAML fetcher
+    │   └── dataLoader.js     # YAML + illustration fetcher
     └── assets/
         └── styles/
             ├── variables.css # Design tokens
@@ -123,14 +134,13 @@ npm run preview  # Preview production build
 
 ## Near-Term Build Order
 
-1. **Add illustration field to elements.yaml** — define illustration paths/prompts
-2. **Create illustration directory** — seed with LLM-generated SVG art for each
-   element (or placeholder SVGs)
-3. **Refactor PeriodicTable to render SVGs** — transition from DOM divs to SVG
-   card elements, keeping the same layout algorithm
-4. **Add print CSS** — `@media print` styles for poster and card-deck layouts
-5. **Add print export button** — trigger print layout via JS or CSS
-6. **Compound lab data structures** — uncomment and expand compounds.yaml,
+See ROADMAP.md for the full tracked plan. Immediate queue:
+
+1. **Add print CSS** — `@media print` styles for poster and card-deck layouts
+2. **Add print export button** — trigger print layout via JS or CSS
+3. **Research grounding (Track R)** — adaptive-function fields, sources.yaml
+   bibliography, taxonomy audit (roster size/membership is open)
+4. **Compound lab data structures** — uncomment and expand compounds.yaml,
    add compound detail view (Phase 2)
 
 ## Design Aesthetic
