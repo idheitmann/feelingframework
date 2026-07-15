@@ -6,6 +6,13 @@
   arousal: 8
   description: "A feeling of great pleasure and happiness."
   somatic: "Upward expansion in chest, lightness."
+  illustration:
+    file: "assets/illustrations/Jy.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A minimal engraved-line rising sun: circle with eight short radiating
+      strokes, warm terracotta on transparent, upward and expansive.
 
 - symbol: "Sd"
   name: "Sadness"
