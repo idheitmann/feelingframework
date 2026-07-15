@@ -23,8 +23,6 @@ export function createElementCard(element, group) {
             fill="#FFFFFF" stroke="rgba(61, 64, 91, 0.15)" stroke-width="1"/>
       <path d="M 7 1.5 H 193 A 5.5 5.5 0 0 1 198.5 7 V 9 H 1.5 V 7 A 5.5 5.5 0 0 1 7 1.5 Z"
             fill="${color}"/>
-      <text x="16" y="32" font-family="${FONT_STACK}" font-size="14"
-            fill="${ink}" opacity="0.55">${element.number}</text>
       <text x="100" y="218" text-anchor="middle" font-family="${FONT_STACK}"
             font-size="44" font-weight="600" fill="${color}">${escapeXml(element.symbol)}</text>
       <text x="100" y="248" text-anchor="middle" font-family="${FONT_STACK}"

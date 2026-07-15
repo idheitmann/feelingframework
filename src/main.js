@@ -2,7 +2,6 @@ import './assets/styles/main.css';
 import { loadAllData } from './utils/dataLoader.js';
 import { store } from './store.js';
 import { createPeriodicTable } from './components/PeriodicTable.js';
-import { createLegend } from './components/Legend.js';
 import { initDetailOverlay } from './components/DetailView.js';
 
 async function init() {
@@ -13,10 +12,7 @@ async function init() {
 
     // 2. Initialize Components
     const tableContainer = document.getElementById('periodic-table-container');
-    const legendContainer = document.getElementById('legend-container');
-
     tableContainer.appendChild(createPeriodicTable());
-    legendContainer.appendChild(createLegend());
 
     // 3. Initialize Overlay
     initDetailOverlay();

@@ -78,9 +78,9 @@ feelingframework/
     ├── main.js            # App init
     ├── store.js           # Pub/sub state store
     ├── components/
-    │   ├── PeriodicTable.js  # Grid layout
-    │   ├── DetailView.js     # Element overlay
-    │   └── Legend.js         # Group legend
+    │   ├── ElementCard.js    # SVG card renderer
+    │   ├── PeriodicTable.js  # Family-column table layout
+    │   └── DetailView.js     # Element overlay
     ├── utils/
     │   └── dataLoader.js     # YAML fetcher
     └── assets/
@@ -97,7 +97,10 @@ feelingframework/
 ### SVG Convention
 When generating card SVGs:
 - ViewBox: 0 0 200 280 (standard card aspect ratio ~5:7)
-- Elements: symbol (large), name (small), number, group color accent, illustration
+- Elements: symbol (large), name (small), group color accent, illustration.
+  Atomic numbers are NOT displayed — `number` in elements.yaml is an internal
+  stable ID only (selection keys off it); the roster isn't final so the
+  numbering conveys nothing
 - Colors reference the group palette from `groups.yaml`
 - Keep SVGs self-contained (no external font dependencies in the SVG itself)
 - Use `<defs>` for reusable patterns

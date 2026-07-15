@@ -33,7 +33,6 @@ function render(container, element, group) {
       <button class="close-btn" onclick="document.getElementById('detail-overlay').click()">×</button>
       
       <div class="detail-header">
-        <div class="detail-number">${element.number}</div>
         <div class="detail-symbol">${element.symbol}</div>
         <div class="detail-name">${element.name}</div>
         <div class="detail-group" style="color: ${color}">${group ? group.name : ''}</div>

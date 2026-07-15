@@ -193,30 +193,6 @@ h1 {
     font-style: italic;
 }
 
-/* Legend */
-.legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-    padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 0.9rem;
-}
-
-.legend-color {
-    width: 1rem;
-    height: 1rem;
-    border-radius: 50%;
-}
-
 /* Detail Overlay */
 #detail-overlay {
     position: fixed;
@@ -270,14 +246,6 @@ h1 {
     padding: var(--spacing-lg);
     text-align: center;
     border-bottom: 4px solid var(--element-color);
-}
-
-.detail-number {
-    font-size: 1rem;
-    opacity: 0.6;
-    position: absolute;
-    top: var(--spacing-md);
-    left: var(--spacing-md);
 }
 
 .detail-symbol {
@@ -399,10 +367,4 @@ h1 {
         padding-top: var(--spacing-xl);
     }
 
-    /* Legend */
-    .legend {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-sm);
-    }
 }
