@@ -24,7 +24,9 @@ it never cares which kind it is.
   field-guide diagram — not emoji, not flat-icon.
 - **Color:** primarily the element's group color from `public/data/groups.yaml`
   (terracotta `#E07A5F`, ochre `#F2CC8F`, sage `#81B29A`, deep blue `#3D405B`,
-  cream `#F4F1DE`, olive `#6B705C`). Ink `#3D405B` for secondary lines.
+  weathered brown `#8A6D4B`, olive `#6B705C`). Ink `#3D405B` for secondary
+  lines. If a group color ever changes, illustrations using it must be
+  recolored to match — check `groups.yaml` before drawing.
   Fills sparing and low-opacity (≤ 0.4); the motif should read at 40px wide.
 - **Motif:** abstract or symbolic, drawn from the element's `somatic` field
   where possible (Joy = rising sun / upward expansion; Fear = contraction;

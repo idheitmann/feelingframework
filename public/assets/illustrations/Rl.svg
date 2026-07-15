@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Relief: the long exhale — each breath softer, dissolving. -->
+  <g fill="none" stroke="#8A6D4B" stroke-width="2.5" stroke-linecap="round">
+    <path d="M38 40 Q60 48 82 40"/>
+    <path d="M36 56 Q60 66 84 56" opacity="0.7"/>
+    <path d="M34 72 Q60 84 86 72" opacity="0.5" stroke-dasharray="4 7"/>
+  </g>
+</svg>

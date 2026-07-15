@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Sadness: a falling drop — heaviness, descent. -->
+  <g fill="none" stroke="#E07A5F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 26 Q79 58 79 72 A19 19 0 0 1 41 72 Q41 58 60 26 Z"/>
+    <path d="M49 74 Q52 82 60 83"/>
+    <line x1="33" y1="82" x2="29" y2="94"/>
+    <line x1="88" y1="80" x2="84" y2="92"/>
+  </g>
+</svg>

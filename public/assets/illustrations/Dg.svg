@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Disgust: recoil — a curve bending away from what rises. -->
+  <g fill="none" stroke="#E07A5F" stroke-width="2.5" stroke-linecap="round">
+    <path d="M36 42 q5 7 0 14 q-5 7 0 14"/>
+    <path d="M48 38 q5 7 0 14 q-5 7 0 14"/>
+    <path d="M74 28 Q90 60 74 92"/>
+  </g>
+</svg>

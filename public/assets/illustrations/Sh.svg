@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Shame: tucked beneath the line of sight — the bowed, hidden form. -->
+  <g fill="none" stroke="#3D405B" stroke-width="2.5" stroke-linecap="round">
+    <line x1="30" y1="42" x2="90" y2="42"/>
+    <circle cx="60" cy="70" r="15"/>
+    <path d="M51 68 Q60 76 69 68"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Love: two circles sharing a center — warmth radiating from the overlap. -->
+  <g fill="none" stroke="#81B29A" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="49" cy="64" r="16"/>
+    <circle cx="71" cy="64" r="16"/>
+    <line x1="60" y1="40" x2="60" y2="30"/>
+    <line x1="46" y1="43" x2="40" y2="35"/>
+    <line x1="74" y1="43" x2="80" y2="35"/>
+  </g>
+</svg>

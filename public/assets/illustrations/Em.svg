@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Embarrassment: the flush — heat breaking out, gaze averted. -->
+  <g fill="none" stroke="#3D405B" stroke-width="2.5" stroke-linecap="round">
+    <circle cx="56" cy="64" r="15"/>
+    <line x1="72" y1="48" x2="79" y2="41"/>
+    <line x1="77" y1="58" x2="86" y2="55"/>
+    <line x1="64" y1="42" x2="68" y2="33"/>
+  </g>
+  <circle cx="50" cy="70" r="2.5" fill="#3D405B" opacity="0.6"/>
+</svg>

@@ -1,3 +1,7 @@
+# Element definitions. See public/assets/illustrations/README.md for the
+# illustration contract. Iterating on generated art = edit prompt, regenerate,
+# bump version. Human art = replace file, set source: human.
+
 - symbol: "Jy"
   name: "Joy"
   number: 1
@@ -12,7 +16,7 @@
     version: 1
     prompt: >
       A minimal engraved-line rising sun: circle with eight short radiating
-      strokes, warm terracotta on transparent, upward and expansive.
+      strokes, warm terracotta, upward and expansive.
 
 - symbol: "Sd"
   name: "Sadness"
@@ -22,6 +26,13 @@
   arousal: 3
   description: "Emotional pain associated with feelings of loss, despair, grief, or disappointment."
   somatic: "Heaviness in limbs, constriction in throat."
+  illustration:
+    file: "assets/illustrations/Sd.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A single falling drop in outline with two short descending streaks
+      beside it — heaviness, descent. Terracotta line.
 
 - symbol: "An"
   name: "Anger"
@@ -31,6 +42,13 @@
   arousal: 9
   description: "A strong feeling of annoyance, displeasure, or hostility."
   somatic: "Heat in face, tension in jaw and hands."
+  illustration:
+    file: "assets/illustrations/An.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A jagged lightning bolt in outline with two small heat ticks —
+      sudden discharge of tension. Ochre line.
 
 - symbol: "Fr"
   name: "Fear"
@@ -40,6 +58,13 @@
   arousal: 8
   description: "An unpleasant emotion caused by the belief that something is dangerous or threatening."
   somatic: "Coldness, rapid heartbeat, shallow breathing."
+  illustration:
+    file: "assets/illustrations/Fr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Four arrows converging inward from the corners onto a small circle —
+      contraction, everything pulling in. Ochre line.
 
 - symbol: "Tr"
   name: "Trust"
@@ -49,6 +74,13 @@
   arousal: 5
   description: "Firm belief in the reliability, truth, or strength of someone or something."
   somatic: "Relaxation in belly, open posture."
+  illustration:
+    file: "assets/illustrations/Tr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      An open bowl-curve cradling a resting dot, ground line beneath —
+      support, relaxation, being held. Sage line.
 
 - symbol: "Sr"
   name: "Surprise"
@@ -58,6 +90,13 @@
   arousal: 10
   description: "The feeling caused by something unexpected or unusual."
   somatic: "Widening of eyes, sharp intake of breath."
+  illustration:
+    file: "assets/illustrations/Sr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      An asymmetric spark burst: small circle with eight uneven radiating
+      strokes of varied length — the sharp intake. Olive line.
 
 - symbol: "Dg"
   name: "Disgust"
@@ -67,6 +106,13 @@
   arousal: 6
   description: "A strong feeling of revulsion or profound disapproval."
   somatic: "Nausea, turning away, wrinkling of nose."
+  illustration:
+    file: "assets/illustrations/Dg.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Two rising wavy lines on the left and a long curve bending away to
+      the right — recoil, turning away. Terracotta line.
 
 - symbol: "Ap"
   name: "Anticipation"
@@ -76,6 +122,13 @@
   arousal: 7
   description: "Expectation or prediction of a future event."
   somatic: "Forward lean, heightened attention, restlessness."
+  illustration:
+    file: "assets/illustrations/Ap.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A faint baseline with an arrow rising forward off it at a lean,
+      dot at its origin — the forward tilt. Olive line.
 
 - symbol: "Lv"
   name: "Love"
@@ -85,6 +138,13 @@
   arousal: 6
   description: "Deep affection and care for another."
   somatic: "Warmth in chest, softening of face."
+  illustration:
+    file: "assets/illustrations/Lv.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Two overlapping circles with three short rays rising from their
+      shared space — warmth radiating from the overlap. Sage line.
 
 - symbol: "Sh"
   name: "Shame"
@@ -94,6 +154,13 @@
   arousal: 5
   description: "Painful feeling of humiliation caused by consciousness of wrong or foolish behavior."
   somatic: "Heat in face, desire to hide, collapsed posture."
+  illustration:
+    file: "assets/illustrations/Sh.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A horizontal line with a circle tucked beneath it, a downward bow
+      inside the circle — hiding below the line of sight. Ink line.
 
 - symbol: "Gl"
   name: "Guilt"
@@ -103,6 +170,13 @@
   arousal: 5
   description: "Awareness of having done wrong, with desire to make amends."
   somatic: "Weight in chest, restless discomfort."
+  illustration:
+    file: "assets/illustrations/Gl.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A plumb weight: bar, vertical line, and a hanging circle with faint
+      fill — the carried mass. Ink line.
 
 - symbol: "Pr"
   name: "Pride"
@@ -112,6 +186,13 @@
   arousal: 7
   description: "Satisfaction derived from achievements or qualities."
   somatic: "Chest expansion, lifted chin, upright posture."
+  illustration:
+    file: "assets/illustrations/Pr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Three chevrons stacked and ascending, narrowing upward to a small
+      dot — expansion and lift. Ink line.
 
 - symbol: "Nv"
   name: "Envy"
@@ -121,6 +202,13 @@
   arousal: 6
   description: "Discontent aroused by desire for another's possessions or qualities."
   somatic: "Tightness in chest, gnawing sensation."
+  illustration:
+    file: "assets/illustrations/Nv.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A small circle low-left and a larger radiant circle high-right,
+      joined by a dotted reaching curve — wanting across a gap. Sage line.
 
 - symbol: "Gr"
   name: "Gratitude"
@@ -130,6 +218,13 @@
   arousal: 4
   description: "Appreciation for what one has received."
   somatic: "Warmth spreading through chest, softened eyes."
+  illustration:
+    file: "assets/illustrations/Gr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      An upward-open cupped curve receiving three small dots descending
+      from above — open hands, warmth arriving. Sage line.
 
 - symbol: "Hp"
   name: "Hope"
@@ -139,6 +234,13 @@
   arousal: 6
   description: "Expectation and desire for a positive outcome."
   somatic: "Lightness, forward orientation, open breathing."
+  illustration:
+    file: "assets/illustrations/Hp.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A two-leaf sprout in outline rising from a faint ground line —
+      growth leaning toward what is coming. Olive line.
 
 - symbol: "Ds"
   name: "Despair"
@@ -148,6 +250,13 @@
   arousal: 2
   description: "Complete loss of hope."
   somatic: "Collapsed posture, heaviness, difficulty moving."
+  illustration:
+    file: "assets/illustrations/Ds.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A spiral tightening inward and downward to a terminal dot —
+      circling down. Weathered-brown line (energy group).
 
 - symbol: "Sn"
   name: "Serenity"
@@ -157,6 +266,13 @@
   arousal: 2
   description: "State of calm and peacefulness."
   somatic: "Slow breathing, relaxed muscles, stillness."
+  illustration:
+    file: "assets/illustrations/Sn.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A still moon-circle above three horizontal water lines fading in
+      length and opacity — stillness. Weathered-brown line (energy group).
 
 - symbol: "Ag"
   name: "Agitation"
@@ -166,6 +282,13 @@
   arousal: 8
   description: "State of anxiety or nervous excitement."
   somatic: "Fidgeting, rapid pulse, inability to settle."
+  illustration:
+    file: "assets/illustrations/Ag.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A single jagged oscillation line of irregular amplitude crossing the
+      frame — a pulse that will not settle. Weathered-brown line (energy group).
 
 - symbol: "Aw"
   name: "Awe"
@@ -175,6 +298,13 @@
   arousal: 7
   description: "Reverential wonder mixed with fear or admiration."
   somatic: "Stillness, breath held, widened perception."
+  illustration:
+    file: "assets/illustrations/Aw.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A vast dome-arc overhead with two faint star crosses inside, and a
+      single small dot beneath — the small self under vastness. Olive line.
 
 - symbol: "Cn"
   name: "Contempt"
@@ -184,6 +314,13 @@
   arousal: 4
   description: "Feeling that someone or something is beneath consideration."
   somatic: "Asymmetric lip raise, turning away."
+  illustration:
+    file: "assets/illustrations/Cn.svg"
+    source: generated
+    version: 1
+    prompt: >
+      An asymmetric horizontal curve with one corner sharply raised, a
+      detached dot above looking away — the smirk abstracted. Sage line.
 
 - symbol: "Ln"
   name: "Longing"
@@ -193,6 +330,13 @@
   arousal: 5
   description: "Persistent desire for something distant or unattainable."
   somatic: "Ache in chest, reaching sensation."
+  illustration:
+    file: "assets/illustrations/Ln.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A small circle low-left, a distant outlined circle high-right, and a
+      dotted arc reaching between that does not connect. Ochre line.
 
 - symbol: "Cr"
   name: "Curiosity"
@@ -202,6 +346,13 @@
   arousal: 6
   description: "Strong desire to know or learn something."
   somatic: "Head tilt, leaning in, focused attention."
+  illustration:
+    file: "assets/illustrations/Cr.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A spiral unwinding outward from a center dot, opening past the frame's
+      middle — attention unwinding into the world. Olive line.
 
 - symbol: "Br"
   name: "Boredom"
@@ -211,6 +362,13 @@
   arousal: 2
   description: "Weariness from lack of interest or occupation."
   somatic: "Heaviness in eyelids, restless shifting, sighing."
+  illustration:
+    file: "assets/illustrations/Br.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Two sagging horizontal curves and a single slow drip-dot below —
+      unfilled time. Weathered-brown line (energy group).
 
 - symbol: "Em"
   name: "Embarrassment"
@@ -220,6 +378,13 @@
   arousal: 7
   description: "Self-conscious distress from social exposure."
   somatic: "Flushing, averted gaze, nervous laughter."
+  illustration:
+    file: "assets/illustrations/Em.svg"
+    source: generated
+    version: 1
+    prompt: >
+      A circle with three flush ticks breaking out of its upper right and
+      a small gaze-dot averted low-left inside. Ink line.
 
 - symbol: "Rl"
   name: "Relief"
@@ -229,6 +394,13 @@
   arousal: 3
   description: "Relaxation following release from anxiety or distress."
   somatic: "Exhale, dropping shoulders, softening."
+  illustration:
+    file: "assets/illustrations/Rl.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Three descending breath-arcs, each softer than the last, the final one
+      dissolving into dashes — the long exhale. Weathered-brown line (energy group).
 
 - symbol: "In"
   name: "Interest"
@@ -238,3 +410,10 @@
   arousal: 5
   description: "Attention directed toward something engaging."
   somatic: "Alert posture, steady gaze, quiet focus."
+  illustration:
+    file: "assets/illustrations/In.svg"
+    source: generated
+    version: 1
+    prompt: >
+      Concentric circles sharpening from faint outer ring to a solid center
+      point — attention narrowing to focus. Olive line.

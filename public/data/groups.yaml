@@ -20,7 +20,7 @@
 
 - id: "energy"
   name: "Energy State"
-  color: "#F4F1DE" # Cream
+  color: "#8A6D4B" # Weathered Brown (cream was invisible on the white card face)
   position: 5
 
 - id: "cognitive"
