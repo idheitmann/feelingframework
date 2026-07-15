@@ -5,14 +5,14 @@
 Read `LLM.md` first for the full vision and spec. This file supplements it with
 architectural decisions, current state, and near-term direction.
 
-**Core idea:** 26 emotional "elements" (like chemical elements) that combine into
+**Core idea:** emotional "elements" (like chemical elements) that combine into
 compound emotions. Chemistry metaphor with somatic integration (body location of
 each emotion).
 
 ## Current State (July 2026)
 
 Phase 1 periodic table is **working** on `main`:
-- 26 elements defined in YAML (`public/data/elements.yaml`)
+- 26 starter elements defined in YAML (`public/data/elements.yaml`)
 - 6 groups with color palette (`public/data/groups.yaml`)
 - Valence×arousal CSS grid layout (10×10 grid)
 - Click-to-inspect detail overlay (description, somatic experience, stats)

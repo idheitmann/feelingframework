@@ -13,7 +13,7 @@
   color: "#81B29A" # Sage
   position: 3
 
-- id: "self-eval"
+- id: "self-evaluation"
   name: "Self-Evaluation"
   color: "#3D405B" # Deep Blue/Grey
   position: 4
