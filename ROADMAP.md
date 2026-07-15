@@ -40,7 +40,7 @@ element can answer: *what adaptive problem did this emotion evolve to solve?*
 sources by key. The DetailView can then render citations; the printed cards
 can carry a compact "further reading" line.
 
-**R3. Research pass per element.** For each of the 26 elements, a deep-research
+**R3. Research pass per element.** For each element on the roster, a deep-research
 pass answering: adaptive function, evolutionary evidence quality (strong /
 contested / speculative), cross-cultural universality (Ekman-style evidence
 vs. constructed-emotion critiques), and honest uncertainty. Key anchors:
@@ -51,10 +51,12 @@ worth representing rather than ignoring), Sznycer (shame/pride/envy as
 social-valuation adaptations), Keltner & Haidt (awe).
 
 **R4. Defensibility audit of the taxonomy itself.** The current 6 groups and
-26 elements are a first draft. Questions to resolve with research in hand:
-Is "energy" a group of emotions or of states? Is Interest distinct from
-Curiosity? Should the roster align with Panksepp's seven primary systems,
-Ekman's basics, or Plutchik's eight — or be honest about being a synthesis?
+26 elements are a first draft — the count is arbitrary and the roster should
+grow or shrink to whatever the evidence supports. Questions to resolve with
+research in hand: Is "energy" a group of emotions or of states? Is Interest
+distinct from Curiosity? Should the roster align with Panksepp's seven primary
+systems, Ekman's basics, or Plutchik's eight — or be honest about being a
+synthesis? How many elements does a defensible synthesis actually yield?
 Output: a `RESEARCH.md` that documents the framework's stance, what it
 borrows from whom, and where it knowingly simplifies. This is what makes
 the project defensible: not claiming more than the evidence supports.
@@ -87,12 +89,14 @@ rules tied to the group palette, no embedded fonts, no raster data, engraved/
 letterpress aesthetic guidance. This is the contract both the LLM generator
 and human artists draw against.
 
-**A3. Seed all 26 with generated art.** First pass: LLM-generated SVG per
-element following A2. These are placeholders-with-dignity — good enough to
-ship, individually replaceable forever after.
+**A3. Seed the full roster with generated art.** First pass: LLM-generated SVG
+per element following A2. These are placeholders-with-dignity — good enough to
+ship, individually replaceable forever after. The generator should be a script
+driven by `elements.yaml`, so a roster change (elements added, renamed,
+removed) regenerates exactly the missing art with no manual bookkeeping.
 
 **A4. Iteration workflow.** A tiny gallery page (dev-only route or plain HTML)
-showing all 26 illustrations side by side at card scale and print scale, so
+showing every illustration side by side at card scale and print scale, so
 each art review pass sees the whole set's coherence, not one card at a time.
 
 ## Track C — SVG Card Renderer (the web/print hinge)
@@ -121,7 +125,7 @@ fixed physical size (e.g. 63.5×88.9mm poker standard) with cut marks and
 bleed, N-up per page. Card backs (group-colored, shared motif) as a second
 sheet for duplex printing.
 
-**P3. Poster mode.** All 26 in the valence×arousal grid at poster scale
+**P3. Poster mode.** The full roster in the valence×arousal grid at poster scale
 (A2/A1), with title, legend, and the research one-liners as fine print —
 this is where Track R content becomes visible ornament.
 
@@ -145,7 +149,7 @@ generation in CI for downloadable "lab sheets."
 | Step | What | Why first |
 |------|------|-----------|
 | 1 | A1 + C1 + C2 (schema, card renderer, grid refactor) | Everything else hangs off SVG cards |
-| 2 | A2 + A3 (conventions + 26 generated illustrations) | Makes the site beautiful; unblocks print |
+| 2 | A2 + A3 (conventions + generated illustrations for the roster) | Makes the site beautiful; unblocks print |
 | 3 | P1 + P2 (print CSS + card sheets) | First physical deliverable |
 | 4 | R1–R3 (schema, sources, research passes) | Content refinement is iterative; start early, land continuously |
 | 5 | P3 + R4–R5 (poster + taxonomy audit + rewrites) | Poster wants final-ish content |
@@ -155,5 +159,7 @@ Research (Track R) is deliberately interleaved rather than last: the taxonomy
 audit (R4) may rename, regroup, or replace elements, and the YAML-driven
 architecture means that's cheap — but art (A3) keyed to element symbols is
 the one asset that a taxonomy change invalidates. So: settle the *roster*
-(which 26, R4) before investing heavily in per-element art refinement, while
-letting first-pass generated art proceed in parallel.
+(which elements, and how many — R4) before investing heavily in per-element
+art refinement, while letting first-pass generated art proceed in parallel.
+A YAML-driven art generator (A3) softens even this: adding element 27 or
+retiring element 12 is a regeneration, not a redesign.

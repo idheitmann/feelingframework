@@ -104,7 +104,8 @@ When generating card SVGs:
 ### Print Considerations
 - Print CSS should use `@media print` for poster/card layout
 - Print layout uses the same SVG assets but arranges them differently
-- Poster: 26 elements in a grid that fits a standard poster size
+- Poster: the full element roster in a grid that fits a standard poster size
+  (roster size is not fixed — print layouts must adapt to element count)
 - Card deck: individual card SVGs laid out for print-and-cut sheets
 - All print styles go in `src/assets/styles/print.css`
 
